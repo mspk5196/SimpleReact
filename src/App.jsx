@@ -7,17 +7,16 @@ function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const handleSignOut = () => {
-        setIsAuthenticated(false); 
+        setIsAuthenticated(false);
     };
 
     return (
-        <Router>
-            <Routes>
-                <Route path="/SimpleReact/signin" element={<SignIn setIsAuthenticated={setIsAuthenticated} />} />
-                <Route path="/SimpleReact/home" element={isAuthenticated ? <Home onSignOut={handleSignOut} /> : <Navigate to="/signin" />} />
-                <Route path="/SimpleReact/" element={<Navigate to="/signin" />} />
-            </Routes>
-        </Router>
+
+        <Routes>
+            <Route path="/SimpleReact/signin" element={<SignIn setIsAuthenticated={setIsAuthenticated} />} />
+            <Route path="/SimpleReact/home" element={isAuthenticated ? <Home onSignOut={handleSignOut} /> : <Navigate to="/SimpleReact/signin" />} />
+            <Route path="/SimpleReact/" element={<Navigate to="/SimpleReact/signin" />} />
+        </Routes>
     );
 }
 

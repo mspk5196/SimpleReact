@@ -12,7 +12,7 @@ export default function SignIn({ setIsAuthenticated }) {
         e.preventDefault();
         if (username === 'admin@gmail.com' && password === 'admin') {
             setIsAuthenticated(true);
-            navigate('/home')
+            navigate('/SimpleReact/home')
         } else {
             setError('Invalid username or password');
         }

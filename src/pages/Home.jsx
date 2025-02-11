@@ -43,13 +43,21 @@ export default function Home() {
     }
     
     function signOut(){
-        navigate('/signIn');
+        navigate('/SimpleReact/signIn');
         location.reload();
     }
     
     function clear(){
         setMarks(Array(5).fill(''));
         setSubmittedMarks([]);
+
+        let errorDialog = document.getElementById("error-div");
+        let inputDiv = document.getElementById("input-container");
+
+        errorDialog.style.display = "none";
+        inputDiv.style.display = "block";
+
+        setMarks(Array(5).fill(''));
     }
     
     return (
